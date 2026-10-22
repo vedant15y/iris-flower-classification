@@ -8,7 +8,7 @@ A Python k-nearest-neighbors classifier trained on `data/Iris_data_sample.csv`. 
 
 ![QR code for the deployed Iris classifier](site-qr.png)
 
-The QR code opens the same production site. The Vercel team currently requires sign-in, so a visitor scanning it must have access to the deployment.
+The QR code opens the same production site. The page and prediction API are publicly accessible.
 
 ## What is in this repository
 
@@ -67,7 +67,7 @@ Run `python build_vercel.py` from this project folder after changing the UI or r
 
 For later updates, install the Vercel CLI (`npm install -g vercel`) and sign in (`vercel login`). From `vercel-site/`, run `vercel deploy` for a preview or `vercel deploy --prod` to update production. Link this folder to the existing `iris-classifier-ml` Vercel project if prompted. The `/predict` route opens the form. Do not deploy the local `app.py` server or either standalone HTML file for this version.
 
-Current production deployment: https://vercel-site-snowy-three.vercel.app/ (project `iris-classifier-ml`). This team currently requires Vercel sign-in before visitors can open the site.
+Current production deployment: https://vercel-site-snowy-three.vercel.app/ (project `iris-classifier-ml`).
 
 ## Method
 
