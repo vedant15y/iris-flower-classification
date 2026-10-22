@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080b">
+  <title>Try the Iris classifier</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="back-link" href="/" aria-label="Back to project story">← <span>PROJECT STORY</span></a>
+      <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="brand-copy">
+        <strong>IRIS / CLASSIFIER</strong>
+        <span>FOUR MEASUREMENTS · ONE RESULT</span>
+      </div>
+      <div class="header-status"><span class="status-dot" aria-hidden="true"></span> Saved model ready</div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">02 / THE CLASSIFIER</p>
+        <h1 id="page-title">Measure a flower.<br><em>See its species.</em></h1>
+        <p class="intro-copy">Enter four positive measurements in centimeters. The saved model compares your flower with its training flowers.</p>
+      </section>
+
+      <div class="workspace-grid">
+        <section class="form-panel" aria-labelledby="measurements-title">
+          <div class="panel-heading">
+            <div>
+              <p class="section-label">01 / Input</p>
+              <h2 id="measurements-title">Flower measurements</h2>
+            </div>
+            <span class="unit-tag">All values in cm</span>
+          </div>
+
+          <form id="prediction-form" novalidate>
+            <fieldset>
+              <legend>Sepal</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="sepal-length">Length <span>cm</span></label>
+                  <input id="sepal-length" name="sepal-length" type="number" inputmode="decimal" min="0.01" step="any" placeholder="e.g. 5.1" autocomplete="off" data-feature required aria-describedby="sepal-length-error">
+                  <p class="field-error" id="sepal-length-error"></p>
+                </div>
+                <div class="field">
+                  <label for="sepal-width">Width <span>cm</span></label>
+                  <input id="sepal-width" name="sepal-width" type="number" inputmode="decimal" min="0.01" step="any" placeholder="e.g. 3.5" autocomplete="off" data-feature required aria-describedby="sepal-width-error">
+                  <p class="field-error" id="sepal-width-error"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Petal</legend>
+              <div class="field-grid">
+                <div class="field">
+                  <label for="petal-length">Length <span>cm</span></label>
+                  <input id="petal-length" name="petal-length" type="number" inputmode="decimal" min="0.01" step="any" placeholder="e.g. 1.4" autocomplete="off" data-feature required aria-describedby="petal-length-error">
+                  <p class="field-error" id="petal-length-error"></p>
+                </div>
+                <div class="field">
+                  <label for="petal-width">Width <span>cm</span></label>
+                  <input id="petal-width" name="petal-width" type="number" inputmode="decimal" min="0.01" step="any" placeholder="e.g. 0.2" autocomplete="off" data-feature required aria-describedby="petal-width-error">
+                  <p class="field-error" id="petal-width-error"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="submit" class="primary-button" id="predict-button">Predict species <span aria-hidden="true">→</span></button>
+              <button type="button" class="text-button" id="example-button">Use example</button>
+              <button type="button" class="text-button" id="clear-button">Clear</button>
+            </div>
+          </form>
+        </section>
+
+        <aside class="result-column" aria-label="Prediction and model information">
+          <section class="result-panel" aria-labelledby="result-title">
+            <p class="section-label">02 / Result</p>
+            <h2 id="result-title">Prediction</h2>
+            <div class="result-content" id="result-content" role="status" aria-live="polite">
+              <div class="result-placeholder" aria-hidden="true">?</div>
+              <p class="result-kicker">Ready when you are</p>
+              <p class="result-name">Enter four values to see a species.</p>
+              <p class="result-detail">The classifier uses the saved model; no retraining is needed.</p>
+            </div>
+          </section>
+
+          <section class="model-panel" aria-labelledby="model-title">
+            <p class="section-label">Model note</p>
+            <h2 id="model-title">What powers this result</h2>
+            <dl class="model-facts">
+              <div><dt>Method</dt><dd>k-nearest neighbors</dd></div>
+              <div><dt>Neighbors</dt><dd id="model-k">—</dd></div>
+              <div><dt>Training flowers</dt><dd id="model-samples">—</dd></div>
+              <div><dt>Held-out accuracy</dt><dd id="test-accuracy">—</dd></div>
+            </dl>
+            <p class="model-note">Neighbor vote share describes local agreement. It is not a calibrated probability.</p>
+          </section>
+        </aside>
+      </div>
+
+      <p class="footer-note">Input order: sepal length, sepal width, petal length, petal width. Enter positive numbers only.</p>
+    </main>
+  </div>
+</body>
+</html>

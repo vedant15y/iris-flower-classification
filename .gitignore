@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.env
+.env.*
+.vercel/
+
+# Generated single-file pages and deployment copies
+Iris_Classifier_Local.html
+Iris_Classifier_Offline.html
+vercel-site/public/
+vercel-site/iris_classifier.py
+vercel-site/model.json
+vercel-site/metrics.json
+
+# Local review exports and previews
+Iris_Classifier_Semester_3_Report_*.docx
+*-preview.png

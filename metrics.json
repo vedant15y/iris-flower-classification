@@ -1,0 +1,58 @@
+{
+  "seed": 42,
+  "training_rows": 119,
+  "test_rows": 30,
+  "cleaning": {
+    "invalid_or_missing_measurements": 4,
+    "unlabeled": 1
+  },
+  "selected_k": 7,
+  "cross_validation_accuracy": {
+    "1": 0.9495798319327731,
+    "3": 0.9411764705882353,
+    "5": 0.9495798319327731,
+    "7": 0.9831932773109243,
+    "9": 0.9747899159663865
+  },
+  "test": {
+    "accuracy": 0.9333333333333333,
+    "macro_f1": 0.9326599326599326,
+    "per_class": {
+      "Iris-setosa": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "Iris-versicolor": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091,
+        "support": 10
+      },
+      "Iris-virginica": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.888888888888889,
+        "support": 10
+      }
+    },
+    "confusion_matrix": {
+      "Iris-setosa": {
+        "Iris-setosa": 10,
+        "Iris-versicolor": 0,
+        "Iris-virginica": 0
+      },
+      "Iris-versicolor": {
+        "Iris-setosa": 0,
+        "Iris-versicolor": 10,
+        "Iris-virginica": 0
+      },
+      "Iris-virginica": {
+        "Iris-setosa": 0,
+        "Iris-versicolor": 2,
+        "Iris-virginica": 8
+      }
+    }
+  }
+}

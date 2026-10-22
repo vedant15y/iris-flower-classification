@@ -1,0 +1,13 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "functions": {
+    "api/*.py": {
+      "includeFiles": "{model.json,metrics.json}",
+      "excludeFiles": "public/**"
+    }
+  },
+  "rewrites": [
+    { "source": "/predict", "destination": "/predict.html" }
+  ]
+}

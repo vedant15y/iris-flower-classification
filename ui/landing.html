@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08080b">
+  <meta name="description" content="Learn how the Iris classifier uses four flower measurements, then test the saved model.">
+  <title>Iris / A flower, measured</title>
+  <link rel="stylesheet" href="/landing.css">
+  <script src="/landing.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#model-summary-title">Skip animation</a>
+
+  <main id="story">
+    <section class="scroll-story" id="scroll-story" aria-labelledby="story-title">
+      <div class="sticky-stage">
+        <video id="iris-video" class="flower-video" muted playsinline preload="auto" poster="/assets/iris-opening.jpg" aria-hidden="true">
+          <source src="/assets/iris-scroll.mp4" type="video/mp4">
+        </video>
+        <div class="stage-shade" aria-hidden="true"></div>
+        <div class="stage-content">
+          <div class="story-beats" aria-live="off">
+            <article class="story-beat" data-beat="0">
+              <h1 id="story-title">A flower,<br><em>measured.</em></h1>
+              <p class="beat-copy">This project predicts an iris species from four flower measurements.</p>
+            </article>
+            <article class="story-beat" data-beat="1">
+              <h2>Four values.<br><em>One flower.</em></h2>
+              <p class="beat-copy">Enter the length and width of the sepal and petal. Use centimeters.</p>
+            </article>
+            <article class="story-beat" data-beat="2">
+              <h2>Missing values<br><em>are filled.</em></h2>
+              <p class="beat-copy">The training process replaces missing values with medians. It then scales each measurement.</p>
+            </article>
+            <article class="story-beat" data-beat="3">
+              <h2>Seven neighbors.<br><em>One result.</em></h2>
+              <p class="beat-copy">The model compares your values with seven training flowers. The most common species becomes the result.</p>
+            </article>
+            <article class="story-beat" data-beat="4">
+              <h2>See the<br><em>species.</em></h2>
+              <p class="beat-copy">The result shows the species and the neighbor vote share. The share is not a probability.</p>
+            </article>
+            <article class="story-beat final-beat" data-beat="5">
+              <h2>Now try<br><em>your flower.</em></h2>
+              <p class="beat-copy">Use four positive measurements in centimeters.</p>
+              <a class="try-button" href="/predict">Try now <span aria-hidden="true">↗</span></a>
+            </article>
+          </div>
+        </div>
+
+        <p class="video-status" id="video-status" role="status" hidden>Animation is unavailable. Scroll to read the project steps.</p>
+      </div>
+    </section>
+
+    <section class="after-story" aria-labelledby="model-summary-title">
+      <div class="after-heading">
+        <p class="section-tag">THE SAVED MODEL</p>
+        <h2 id="model-summary-title">Built to make<br><em>one clear prediction.</em></h2>
+      </div>
+      <div class="after-facts">
+        <div><strong>4</strong><span>measurements</span></div>
+        <div><strong id="fact-k">7</strong><span>nearest neighbors</span></div>
+        <div><strong id="fact-accuracy">28/30</strong><span>correct test flowers</span></div>
+      </div>
+      <p class="after-note" id="fact-note">The model learned from 119 training flowers. It returns one of three species: Iris-setosa, Iris-versicolor, or Iris-virginica. It classified 28 of 30 test flowers correctly. A new result can still be wrong.</p>
+      <a class="after-link" href="/predict">Open the classifier <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>IRIS / CLASSIFIER</span><span>LOCAL PROJECT · 2026</span></footer>
+</body>
+</html>

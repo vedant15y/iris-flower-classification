@@ -1,0 +1,77 @@
+:root {
+  color-scheme: dark;
+  --bg: #08080b;
+  --text: #f7f2f4;
+  --muted: #b9b3c8;
+  --purple: #bda7ff;
+  --line: rgba(189, 167, 255, .28);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", Arial, sans-serif; }
+a { color: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 2px solid var(--purple); outline-offset: 5px; }
+
+.skip-link { position: fixed; z-index: 20; left: 20px; top: -70px; background: var(--purple); color: #171025; padding: 12px 16px; font-weight: 700; }
+.skip-link:focus { top: 12px; }
+
+.scroll-story { height: 700vh; position: relative; }
+.sticky-stage { position: sticky; top: 0; height: 100vh; height: 100svh; min-height: 550px; overflow: hidden; isolation: isolate; background: #000 url('/assets/iris-opening.jpg') center / cover no-repeat; }
+.flower-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; z-index: -3; opacity: 0; transition: opacity .25s ease; }
+.flower-video.is-ready { opacity: 1; }
+.stage-shade { position: absolute; inset: 0; z-index: -2; opacity: 0; pointer-events: none; background: linear-gradient(90deg, rgba(1,1,4,.94) 0%, rgba(1,1,4,.81) 31%, rgba(1,1,4,.15) 66%, rgba(1,1,4,.22) 100%), linear-gradient(0deg, rgba(0,0,0,.58) 0%, transparent 23%, transparent 78%, rgba(0,0,0,.32) 100%); }
+.stage-content { position: absolute; left: clamp(42px, 8.5vw, 164px); right: 45%; top: 50%; transform: translateY(-36%); min-height: 340px; max-width: 680px; display: flex; flex-direction: column; justify-content: center; }
+.story-beats { position: relative; min-height: 330px; }
+.story-beat { position: absolute; inset: 0; opacity: 0; filter: blur(14px); transform: translateY(24px); pointer-events: none; transition: opacity .65s ease, filter .65s ease, transform .65s ease; }
+.story-beat.is-active { opacity: 1; filter: blur(0); transform: translateY(0); pointer-events: auto; }
+.story-beat h1, .story-beat h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(46px, 5.8vw, 105px); font-weight: 400; letter-spacing: -.072em; line-height: .98; margin: 0; text-wrap: balance; }
+.story-beat em, .after-heading em { color: var(--purple); font-weight: 400; }
+.beat-copy { max-width: 390px; margin: 26px 0 0; color: #ece5e9; font-size: clamp(15px, 1.3vw, 18px); line-height: 1.55; text-wrap: pretty; }
+.try-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 50px; min-width: 204px; min-height: 57px; margin-top: 29px; padding: 0 21px; background: var(--purple); color: #171025; font-size: 14px; font-weight: 800; text-decoration: none; transition: background .2s, transform .2s; }
+.try-button:hover { background: #d9ceff; transform: translateY(-2px); }
+.try-button span { font-size: 23px; font-weight: 400; }
+.video-status { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); margin: 0; padding: 8px 12px; font-size: 11px; color: var(--text); background: rgba(0,0,0,.65); }
+
+.after-story { min-height: 75vh; padding: clamp(90px, 11vw, 170px) clamp(42px, 8.5vw, 164px) 110px; display: grid; grid-template-columns: 1fr 1fr; gap: 55px 9vw; border-top: 1px solid var(--line); background: radial-gradient(circle at 88% 12%, rgba(92,58,161,.18), transparent 37%), var(--bg); }
+.section-tag { margin: 0 0 25px; color: var(--purple); font-size: 11px; font-weight: 800; letter-spacing: .2em; }
+.after-heading h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(43px, 4.4vw, 76px); font-weight: 400; letter-spacing: -.06em; line-height: 1.02; }
+.after-facts { align-self: end; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.after-facts div { border-top: 1px solid var(--line); padding-top: 16px; }
+.after-facts strong { display: block; color: var(--purple); font-family: Georgia, serif; font-size: clamp(30px, 3vw, 51px); font-weight: 400; letter-spacing: -.05em; }
+.after-facts span { display: block; margin-top: 7px; color: var(--muted); font-size: 12px; line-height: 1.35; }
+.after-note { grid-column: 1; max-width: 440px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.65; }
+.after-link { grid-column: 2; justify-self: start; display: inline-flex; align-items: center; gap: 45px; align-self: start; border-bottom: 1px solid var(--purple); padding-bottom: 13px; color: var(--purple); font-size: 14px; font-weight: 700; text-decoration: none; }
+.after-link span { font-size: 21px; }
+.site-footer { min-height: 65px; padding: 0 clamp(24px, 4.8vw, 86px); border-top: 1px solid rgba(255,255,255,.13); display: flex; justify-content: space-between; align-items: center; color: #a99fa6; font-size: 10px; font-weight: 700; letter-spacing: .16em; }
+
+@media (max-width: 850px) {
+  .stage-content { right: 16%; }
+  .stage-shade { background: linear-gradient(90deg, rgba(1,1,4,.94), rgba(1,1,4,.72) 55%, rgba(1,1,4,.22)), linear-gradient(0deg, rgba(0,0,0,.58), transparent 30%); }
+  .after-story { grid-template-columns: 1fr; }
+  .after-note, .after-link { grid-column: 1; }
+}
+@media (max-width: 600px) {
+  .scroll-story { height: 600vh; }
+  .sticky-stage { min-height: 0; background-size: 140% auto; }
+  .flower-video { object-fit: contain; object-position: center; transform: scale(1.4); }
+  .stage-shade { background: linear-gradient(0deg, rgba(0,0,0,.97) 4%, rgba(0,0,0,.78) 39%, rgba(0,0,0,.28) 80%); }
+  .stage-content { left: 32px; right: 32px; top: auto; bottom: 94px; transform: none; min-height: 0; }
+  .story-beats { min-height: 285px; }
+  .story-beat h1, .story-beat h2 { font-size: clamp(45px, 12vw, 70px); }
+  .beat-copy { max-width: 330px; margin-top: 18px; font-size: 15px; }
+  .try-button { margin-top: 21px; min-height: 52px; }
+  .after-story { padding: 82px 32px; gap: 45px; }
+  .after-facts { gap: 9px; }
+  .after-facts span { font-size: 11px; }
+  .site-footer { padding: 0 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scroll-story { height: 100svh; min-height: 550px; }
+  .sticky-stage { background: #000 url('/assets/iris-final.jpg') center / cover no-repeat; }
+  .flower-video { display: none; }
+  .story-beat { transition: none; }
+  .try-button { transition: none; }
+}
